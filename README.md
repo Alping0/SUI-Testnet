@@ -1,4 +1,4 @@
-***SUI TEŞVİKLİ TESTNET REHBERİ***
+**SUI TEŞVİKLİ TESTNET REHBERİ**
 
 Sui testnetine katılmak için seçildiyseniz aşağıdaki kılavuzdan full-node kurabilirsiniz.
 
@@ -20,67 +20,67 @@ Biz docker kullanarak node'umuzu kuracağımız bir rehber oluşturduk, docker k
 
 **1. Linux gereksinimlerini yüklemek.**
 
- sudo apt update \ && apt-get install -y --no-install-recommends \apt-transport-https \ca-certificates \curl \software-properties-common
+ ***sudo apt update \ && apt-get install -y --no-install-recommends \apt-transport-https \ca-certificates \curl \software-properties-common***
 
 **2. Docker kurmak**
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+***curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -***
 
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+***sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"***
 
-sudo apt update
+***sudo apt update***
 
-sudo apt install docker-ce
+***sudo apt install docker-ce***
 
 **3. Kullanıcı adınızı Docker grubunun içerisine eklemek.**
 
-sudo usermod -aG docker {USER}
+***sudo usermod -aG docker {USER}***
 
 #User adınızı öğrenmek için echo $USER yazın.
 
 **4. Docker Compose indirin.**
 
-sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+***sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose***
 
-sudo chmod +x /usr/local/bin/docker-compose
+***sudo chmod +x /usr/local/bin/docker-compose***
 
-docker-compose --version
+***docker-compose --version***
 
 **5.SUI Directory Oluşturun.**
 
-mkdir -p $HOME/sui
+***mkdir -p $HOME/sui***
 
-cd $HOME/sui
+***cd $HOME/sui***
 
 **6. Fullnode.yaml dosyasını indirin.**
 
-wget -O $HOME/sui/fullnode-template.yaml https://github.com/MystenLabs/sui/raw/main/crates/sui-config/data/fullnode-template.yaml
+***wget -O $HOME/sui/fullnode-template.yaml https://github.com/MystenLabs/sui/raw/main/crates/sui-config/data/fullnode-template.yaml***
 
 **7. Genesis state dosyasını indirin.**
 
-cd $HOME/.sui
+***cd $HOME/.sui***
 
-wget https://raw.githubusercontent.com/SuiExternal/sui-external/main/genesis.blob
+***wget https://raw.githubusercontent.com/SuiExternal/sui-external/main/genesis.blob***
 
 **8. Gerekli docker-compose dosyasını indirin ve Sui görselini güncelleyin.**
 
-IMAGE="mysten/sui-node:99b4e7ca83b6d1abe312f5afc04840dce331238b"
+***IMAGE="mysten/sui-node:99b4e7ca83b6d1abe312f5afc04840dce331238b"***
 
-wget -O $HOME/sui/docker-compose.yaml https://raw.githubusercontent.com/MystenLabs/sui/main/docker/fullnode/docker-compose.yaml
+***wget -O $HOME/sui/docker-compose.yaml https://raw.githubusercontent.com/MystenLabs/sui/main/docker/fullnode/docker-compose.yaml***
 
-sed -i.bak "s|image:.*|image: $IMAGE|" $HOME/sui/docker-compose.yaml
+***sed -i.bak "s|image:.*|image: $IMAGE|" $HOME/sui/docker-compose.yaml***
 
 **9. Docker container içindeki Sui full-node'u çalıştırın.**
 
-docker-compose up -d --force-recreate
+***docker-compose up -d --force-recreate***
 
 **10. Container içindeki logları inceleyin.**
 
-docker ps
+***docker ps***
 
 #Docker ps komutundan sonra container id'de yazan numarayı kopyalayın
 
-docker logs -f <container id>
+***docker logs -f <container id>***
 
  #Kopyaladığınız id yi <container id> yi silerek yapıştırın ve logları inceleyin.
   
@@ -88,11 +88,11 @@ docker logs -f <container id>
   
 **1. Güncelleme gerektiğinde**
   
-  docker-compose down --volumes
+  ***docker-compose down --volumes***
   
 **2. Node'u yeniden çalıştırmak için**
   
-  docker-compose up -d
+  ***docker-compose up -d***
   
 **Node sync durumunu kontrol etmek için:**
   
