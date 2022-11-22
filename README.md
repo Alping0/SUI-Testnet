@@ -1,4 +1,5 @@
 Sui testnetine katılmak için seçildiyseniz aşağıdaki kılavuzdan full-node kurabilirsiniz.
+
 ![image](https://user-images.githubusercontent.com/105454859/203421284-59e8efda-9cb6-4500-96f7-612f4da50a49.png)
 
 Sadece seçilen kullanıcılar ödül alabilecekler!
@@ -11,7 +12,7 @@ Biz docker kullanarak node'umuzu kuracağımız bir rehber oluşturduk, docker k
 
 1. Linux gereksinimlerini yüklemek.
 
- sudo apt update \
+ $sudo apt update \
 && apt-get install -y --no-install-recommends \
 apt-transport-https \
 ca-certificates \
@@ -27,7 +28,8 @@ sudo apt install docker-ce
 
 3. Kullanıcı adınızı Docker grubunun içerisine eklemek.
 
-sudo usermod -aG docker ${USER}
+$sudo usermod -aG docker ${USER}
+
 #User adınızı öğrenmek için echo $USER yazın.
 
 4. Docker Compose indirin.
@@ -63,10 +65,12 @@ docker-compose up -d --force-recreate
 10. Container içindeki logları inceleyin.
 
 docker ps
+
 #Docker ps komutundan sonra container id'de yazan numarayı kopyalayın
 
 docker logs -f <container id>
-#Kopyaladığınız id yi <container id> yi silerek yapıştırın ve logları inceleyin.
+
+ #Kopyaladığınız id yi <container id> yi silerek yapıştırın ve logları inceleyin.
   
 Yardımcı Kodlar
   
