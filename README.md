@@ -25,8 +25,11 @@ Biz docker kullanarak node'umuzu kuracağımız bir rehber oluşturduk, docker k
 **2. Docker kurmak**
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+
 sudo apt update
+
 sudo apt install docker-ce
 
 **3. Kullanıcı adınızı Docker grubunun içerisine eklemek.**
@@ -38,12 +41,15 @@ sudo usermod -aG docker {USER}
 **4. Docker Compose indirin.**
 
 sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
 sudo chmod +x /usr/local/bin/docker-compose
+
 docker-compose --version
 
 **5.SUI Directory Oluşturun.**
 
 mkdir -p $HOME/sui
+
 cd $HOME/sui
 
 **6. Fullnode.yaml dosyasını indirin.**
@@ -53,12 +59,15 @@ wget -O $HOME/sui/fullnode-template.yaml https://github.com/MystenLabs/sui/raw/m
 **7. Genesis state dosyasını indirin.**
 
 cd $HOME/.sui
+
 wget https://raw.githubusercontent.com/SuiExternal/sui-external/main/genesis.blob
 
 **8. Gerekli docker-compose dosyasını indirin ve Sui görselini güncelleyin.**
 
 IMAGE="mysten/sui-node:99b4e7ca83b6d1abe312f5afc04840dce331238b"
+
 wget -O $HOME/sui/docker-compose.yaml https://raw.githubusercontent.com/MystenLabs/sui/main/docker/fullnode/docker-compose.yaml
+
 sed -i.bak "s|image:.*|image: $IMAGE|" $HOME/sui/docker-compose.yaml
 
 **9. Docker container içindeki Sui full-node'u çalıştırın.**
