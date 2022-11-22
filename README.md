@@ -80,7 +80,7 @@ Biz docker kullanarak node'umuzu kuracağımız bir rehber oluşturduk, docker k
 
 #Docker ps komutundan sonra container id'de yazan numarayı kopyalayın
 
-*docker logs -f container id*
+*docker logs -f <container id> *
 
  #Kopyaladığınız id yi container id yi silerek yapıştırın ve logları inceleyin.
   
