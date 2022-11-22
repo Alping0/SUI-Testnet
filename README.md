@@ -82,7 +82,7 @@ Biz docker kullanarak node'umuzu kuracağımız bir rehber oluşturduk, docker k
 
 *docker logs -f <container id>*
 
- #Kopyaladığınız id yi yapıştırın ve logları inceleyin.
+ #Kopyaladığınız id yi docker logs -f 'den sonra yapıştırın ve logları inceleyin.
   
  **Yardımcı Kodlar**
   
