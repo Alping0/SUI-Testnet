@@ -1,4 +1,4 @@
-**SUI TEŞVİKLİ TESTNET REHBERİ**
+***SUI TEŞVİKLİ TESTNET REHBERİ***
 
 Sui testnetine katılmak için seçildiyseniz aşağıdaki kılavuzdan full-node kurabilirsiniz.
 
