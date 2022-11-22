@@ -77,15 +77,15 @@ $docker logs -f <container id>
   
  **Yardımcı Kodlar**
   
-1. Güncelleme gerektiğinde
+**1. Güncelleme gerektiğinde**
   
   $docker-compose down --volumes
   
-2. Node'u yeniden çalıştırmak için
+**2. Node'u yeniden çalıştırmak için**
   
   $docker-compose up -d
   
-Node sync durumunu kontrol etmek için:
+**Node sync durumunu kontrol etmek için:**
   
   https://www.scale3labs.com/check/sui/testnet
 
